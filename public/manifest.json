@@ -1,0 +1,16 @@
+{
+  "0.js": "/wp-content/themes/assignment/public/0.js",
+  "application.css": "/wp-content/themes/assignment/public/application.css",
+  "application.js": "/wp-content/themes/assignment/public/application.js",
+  "application.json": "/wp-content/themes/assignment/public/application.asset.json",
+  "applicationAdmin.css": "/wp-content/themes/assignment/public/applicationAdmin.css",
+  "applicationAdmin.js": "/wp-content/themes/assignment/public/applicationAdmin.js",
+  "applicationAdmin.json": "/wp-content/themes/assignment/public/applicationAdmin.asset.json",
+  "applicationBlocks.css": "/wp-content/themes/assignment/public/applicationBlocks.css",
+  "applicationBlocks.js": "/wp-content/themes/assignment/public/applicationBlocks.js",
+  "applicationBlocks.json": "/wp-content/themes/assignment/public/applicationBlocks.asset.json",
+  "applicationBlocksEditor.css": "/wp-content/themes/assignment/public/applicationBlocksEditor.css",
+  "applicationBlocksEditor.js": "/wp-content/themes/assignment/public/applicationBlocksEditor.js",
+  "applicationBlocksEditor.json": "/wp-content/themes/assignment/public/applicationBlocksEditor.asset.json",
+  "logo.svg": "/wp-content/themes/assignment/public/logo.svg"
+}

@@ -1,0 +1,49 @@
+{
+	"componentName": "image",
+	"title": "Image",
+	"componentClass": "image",
+	"example": {
+		"attributes": {
+			"imageUrl": "https://raw.githubusercontent.com/infinum/eightshift-frontend-libs/develop/package/logo.svg?raw=true&sanitize=true",
+			"imageAlign": "center center",
+			"imageLink": "https://infinum.github.io/eightshift-docs/",
+			"imageAlt": "Some image description",
+			"imageUse": true
+		}
+	},
+	"attributes": {
+		"imageUrl": {
+			"type": "string"
+		},
+		"imageAlign": {
+			"type": "string",
+			"default": "center center"
+		},
+		"imageLink": {
+			"type": "string"
+		},
+		"imageAccept": {
+			"type": "string",
+			"default": "image/*"
+		},
+		"imageAllowedTypes": {
+			"type": "array",
+			"default": ["image"]
+		},
+		"imageBg": {
+			"type": "boolean",
+			"default": false
+		},
+		"imageUsePlaceholder": {
+			"type": "boolean",
+			"default": false
+		},
+		"imageAlt": {
+			"type": "string"
+		},
+		"imageUse": {
+			"type": "boolean",
+			"default": true
+		}
+	}
+}
