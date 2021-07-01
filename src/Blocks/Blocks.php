@@ -50,6 +50,12 @@ class Blocks extends AbstractBlocks
 
 		// Register Reusable blocks side menu.
 		\add_action('admin_menu', [$this, 'addReusableBlocks']);
+
+        // Disable core Gutenberg blocks.
+        \add_filter('allowed_block_types', [ $this, 'getAllBlocksList' ], 10, 2);
+
+        // Remove core Gutenberg block patterns.
+        \add_filter('block_editor_settings', [$this, 'removeCorePatterns']);
 	}
 
 	/**
@@ -81,4 +87,18 @@ class Blocks extends AbstractBlocks
 			4
 		);
 	}
+
+    /**
+    * Remove core block patterns
+    *
+    * @param array $settings Array of block editor settings to filter out.
+    *
+    * @return array Filtered array.
+    */
+    public function removeCorePatterns(array $settings): array
+    {
+        $settings['__experimentalBlockPatterns'] = [];
+
+        return $settings;
+    }
 }
