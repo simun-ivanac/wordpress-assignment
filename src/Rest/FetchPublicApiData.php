@@ -36,8 +36,8 @@ class FetchPublicApiData implements ServiceInterface
 	 */
 	public function __construct()
 	{
-		$this->baseUrl = 'http://api.mediastack.com/v1/news?';
-		$this->apiKey = '0700b5c5a1094afe7e084b6181b6491d';
+		$this->baseUrl = API_BASE_URL;
+		$this->apiKey = API_KEY;
 	}
 
 	/**
