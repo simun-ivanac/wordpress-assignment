@@ -10,12 +10,10 @@ declare(strict_types=1);
 
 namespace Assignment\Rest;
 
-use AssignmentVendor\EightshiftLibs\Services\ServiceInterface;
-
 /**
  * FetchPublicApiData class.
  */
-class FetchPublicApiData implements ServiceInterface
+class FetchPublicApiData
 {
 	/**
 	 * Private API key used for authentification.
@@ -62,14 +60,5 @@ class FetchPublicApiData implements ServiceInterface
 		$response = \wp_remote_get($baseUrl);
 
 		return $response;
-	}
-
-	/**
-	 * Register all the hooks
-	 *
-	 * @return void
-	 */
-	public function register(): void
-	{
 	}
 }
