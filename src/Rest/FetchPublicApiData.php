@@ -42,7 +42,7 @@ class FetchPublicApiData
 	 * Uses parameters from custom REST route to send request and forward
 	 * data from to public API.
 	 *
-	 * @see          https://mediastack.com/documentation
+	 * @see          https://currentsapi.services/en/docs/latest_news
 	 * @param  array $params Array of parameters.
 	 * @return array
 	 */
@@ -52,12 +52,16 @@ class FetchPublicApiData
 		$apiKey = $this->apiKey;
 
 		if (count($params) > 0) {
-			$baseUrl .= http_build_query($params);
-			$baseUrl .= '&';
+			$baseUrl = \esc_url(\add_query_arg($params, $baseUrl));
 		}
 
-		$baseUrl .= 'access_key=' . $apiKey;
-		$response = \wp_remote_get($baseUrl);
+		$args = [
+			'headers' => [
+				'Authorization' => $apiKey
+			],
+		];
+
+		$response = \wp_remote_get($baseUrl, $args);
 
 		return $response;
 	}
