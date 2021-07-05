@@ -10,7 +10,7 @@ Create landing page provided in `design` folder. Every task should be done on se
 
 :heavy_check_mark: setup the theme & disable core WordPress blocks
 
-:x: fetch some data from public API & display it on custom REST route
+:heavy_check_mark: fetch some data from public API & display it on custom REST route
 
 :x: create custom block that will load fetched data
 
@@ -18,4 +18,4 @@ Create landing page provided in `design` folder. Every task should be done on se
 
 ### Sidenotes
 
-I decided to use [Currents API](https://currentsapi.services/en) for loading data. For modest documentation visit this [link](https://currentsapi.services/en/docs/latest_news).
+I decided to use [Currents API](https://currentsapi.services/en) for loading data. For its modest documentation visit this [link](https://currentsapi.services/en/docs/latest_news).
