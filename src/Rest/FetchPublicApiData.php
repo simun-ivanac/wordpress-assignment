@@ -46,7 +46,7 @@ class FetchPublicApiData
 	 * @param  array $params Array of parameters.
 	 * @return array
 	 */
-	public function getApiData(array $params)
+	public function getApiData(array $params = [])
 	{
 		$baseUrl = $this->baseUrl;
 		$apiKey = $this->apiKey;
