@@ -49,6 +49,11 @@
 				"name": "White",
 				"slug": "white",
 				"color": "#FFFFFF"
+			},
+			{
+				"name": "Pink",
+				"slug": "pink",
+				"color": "#FF86D6"
 			}
 		]
 	}
