@@ -50,6 +50,7 @@ class FetchPublicApiData
 	{
 		$baseUrl = $this->baseUrl;
 		$apiKey = $this->apiKey;
+		$limit = $params['limit'] ?? 4;
 
 		if (count($params) > 0) {
 			$baseUrl = \esc_url(\add_query_arg($params, $baseUrl));
@@ -62,6 +63,11 @@ class FetchPublicApiData
 		];
 
 		$response = \wp_remote_get($baseUrl, $args);
+		$response = \json_decode($response['body'], true);
+
+		// Public API doesn't accepts limit as parameter,
+		// so it needs to be sliced manually.
+		$response = array_slice($response['news'], 0, $limit);
 
 		return $response;
 	}
