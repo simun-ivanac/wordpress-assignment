@@ -10,7 +10,12 @@ use Assignment\Rest\FetchPublicApiData;
 use AssignmentVendor\EightshiftLibs\Helpers\Components;
 
 $manifest = Components::getManifest(__DIR__);
+
 $blockClass = $attributes['blockClass'] ?? '';
+$articleClasses = Components::classNames([
+	"{$blockClass}__post",
+	"article-post"
+]);
 
 // Receive API data.
 $apiNews = new FetchPublicApiData();
@@ -33,7 +38,7 @@ $apiNews = $apiNews->getApiData(['limit' => 4]); ?>
 	<div class="<?php echo \esc_attr("{$blockClass}__posts"); ?>">
 		<?php foreach ($apiNews as $key => $item) { ?>
 			<article 
-				class="<?php echo \esc_attr("{$blockClass}__post article-post js-article-post"); ?>"
+				class="<?php echo \esc_attr("{$articleClasses}"); ?>"
 				data-id="<?php echo \esc_attr($item['id']); ?>">
 				<?php
 				echo \wp_kses_post(
@@ -43,7 +48,7 @@ $apiNews = $apiNews->getApiData(['limit' => 4]); ?>
 							'imageUrl' => $item['image'],
 							'imageLink' => $item['url'],
 							'imageAlt' => $item['title'],
-							'blockClass' => $blockClass . "__image js-{$blockClass}",
+							'blockClass' => $blockClass
 						]
 					)
 				); ?>
@@ -59,7 +64,7 @@ $apiNews = $apiNews->getApiData(['limit' => 4]); ?>
 							'headingLevel' => 3,
 							'headingSize' => 'default',
 							'headingAlign' => 'left',
-							'blockClass' => $blockClass . "__heading js-{$blockClass}",
+							'blockClass' => $blockClass
 						]
 					)
 				);
@@ -70,7 +75,7 @@ $apiNews = $apiNews->getApiData(['limit' => 4]); ?>
 							'paragraphContent' => $item['description'],
 							'paragraphAlign' => 'left',
 							'paragraphSize' => 'small',
-							'blockClass' => $blockClass . "__paragraph js-{$blockClass}",
+							'blockClass' => $blockClass
 						]
 					)
 				); ?>
@@ -93,8 +98,8 @@ $apiNews = $apiNews->getApiData(['limit' => 4]); ?>
 				[
 					'buttonContent' => esc_html__('Load More', 'assignment'),
 					'buttonAlign' => 'center',
-					'buttonId' => $blockClass . '__load-more',
-					'blockClass' => $blockClass . '__button js-' . $blockClass
+					'buttonId' => "{$blockClass}__load-more",
+					'blockClass' => $blockClass
 				]
 			)
 		);
