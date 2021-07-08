@@ -31,7 +31,7 @@ $apiNews = $apiNews->getApiData(['limit' => 4]); ?>
 		)
 	); ?>
 	<div class="<?php echo \esc_attr("{$blockClass}__posts"); ?>">
-		<?php foreach ($apiNews as $key => $item) : ?>
+		<?php foreach ($apiNews as $key => $item) { ?>
 			<article 
 				class="<?php echo \esc_attr("{$blockClass}__post article-post js-article-post"); ?>"
 				data-id="<?php echo \esc_attr($item['id']); ?>">
@@ -75,28 +75,28 @@ $apiNews = $apiNews->getApiData(['limit' => 4]); ?>
 					)
 				); ?>
 				<div class="<?php echo \esc_attr("{$blockClass}__categories"); ?> js-article-categories">
-					<?php foreach ($item['category'] as $key => $category) : ?>
+					<?php foreach ($item['category'] as $key => $category) { ?>
 						<span class="<?php echo \esc_attr("{$blockClass}__category"); ?>">
 							<?php echo \wp_kses_post($category); ?>
 						</span>
-					<?php endforeach; ?>
+					<?php } ?>
 				</div>
 			</article>
-		<?php endforeach; ?>
+		<?php } ?>
 	</div>
 	<?php
 	// Show "load more" button only if requested number of posts is returned.
-	if (count($apiNews) === 4) :
+	if (count($apiNews) === 4) {
 		echo \wp_kses_post(
 			Components::render(
 				'button',
 				[
-					'buttonContent' => __('Load More', 'Assignment'),
+					'buttonContent' => __('Load More', 'assignment'),
 					'buttonAlign' => 'center',
 					'buttonId' => $blockClass . '__load-more',
 					'blockClass' => $blockClass . '__button js-' . $blockClass
 				]
 			)
 		);
-	endif; ?>
+	} ?>
 </section >
