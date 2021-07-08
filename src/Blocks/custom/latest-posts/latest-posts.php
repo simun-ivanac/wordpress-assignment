@@ -23,7 +23,7 @@ $apiNews = $apiNews->getApiData(['limit' => 4]); ?>
 		Components::render(
 			'heading',
 			[
-				'headingContent' => 'Latest corns',
+				'headingContent' => esc_html__('Latest corns', 'assignment'),
 				'headingLevel' => 2,
 				'headingAlign' => 'left',
 				'headingSize' => 'big',
@@ -91,7 +91,7 @@ $apiNews = $apiNews->getApiData(['limit' => 4]); ?>
 			Components::render(
 				'button',
 				[
-					'buttonContent' => __('Load More', 'assignment'),
+					'buttonContent' => esc_html__('Load More', 'assignment'),
 					'buttonAlign' => 'center',
 					'buttonId' => $blockClass . '__load-more',
 					'blockClass' => $blockClass . '__button js-' . $blockClass
