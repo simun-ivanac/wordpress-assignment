@@ -11,6 +11,8 @@ use AssignmentVendor\EightshiftLibs\Helpers\Components;
 
 $manifest = Components::getManifest(__DIR__);
 
+$numOfPosts = Components::checkAttr('numberOfPosts', $attributes, $manifest);
+
 $blockClass = $attributes['blockClass'] ?? '';
 $articleClasses = Components::classNames([
 	"{$blockClass}__post",
@@ -18,7 +20,7 @@ $articleClasses = Components::classNames([
 ]);
 
 // Receive API data.
-$apiNews = \apply_filters('get_api_data', ['limit' => 4]);
+$apiNews = \apply_filters('get_api_data', ['limit' => $numOfPosts]);
 
 ?>
 
@@ -91,7 +93,7 @@ $apiNews = \apply_filters('get_api_data', ['limit' => 4]);
 	</div>
 	<?php
 	// Show "load more" button only if requested number of posts is returned.
-	if (count($apiNews) === 4) {
+	if (count($apiNews) === $numOfPosts) {
 		echo \wp_kses_post(
 			Components::render(
 				'button',

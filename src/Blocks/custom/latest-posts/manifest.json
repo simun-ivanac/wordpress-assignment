@@ -12,13 +12,13 @@
 	],
 	"example": {
 		"attributes": {
-			"serverSideRender": true
+			"numberOfPosts": 4
 		}
 	},
 	"attributes": {
-		"serverSideRender": {
-			"type": "boolean",
-			"default": true
+		"numberOfPosts": {
+			"type": "integer",
+			"default": 4
 		}
 	}
 }
