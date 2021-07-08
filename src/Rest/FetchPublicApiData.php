@@ -10,10 +10,12 @@ declare(strict_types=1);
 
 namespace Assignment\Rest;
 
+use AssignmentVendor\EightshiftLibs\Services\ServiceInterface;
+
 /**
  * FetchPublicApiData class.
  */
-class FetchPublicApiData
+class FetchPublicApiData implements ServiceInterface
 {
 	/**
 	 * Private API key used for authentification.
@@ -39,8 +41,18 @@ class FetchPublicApiData
 	}
 
 	/**
-	 * Uses parameters from custom REST route to send request and forward
-	 * data from to public API.
+	 * Register all the hooks
+	 *
+	 * @return void
+	 */
+	public function register(): void
+	{
+		\add_filter('get_api_data', [$this, 'getApiData']);
+	}
+
+	/**
+	 * Uses parameters to build request to public API and
+	 * returns response.
 	 *
 	 * @see          https://currentsapi.services/en/docs/latest_news
 	 * @param  array $params Array of parameters.

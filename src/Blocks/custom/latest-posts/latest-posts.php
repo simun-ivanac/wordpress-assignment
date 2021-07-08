@@ -18,9 +18,9 @@ $articleClasses = Components::classNames([
 ]);
 
 // Receive API data.
-$apiNews = new FetchPublicApiData();
-$apiNews = $apiNews->getApiData(['limit' => 4]); ?>
+$apiNews = \apply_filters('get_api_data', ['limit' => 4]);
 
+?>
 
 <section class="<?php echo \esc_attr($blockClass); ?>">
 	<?php
