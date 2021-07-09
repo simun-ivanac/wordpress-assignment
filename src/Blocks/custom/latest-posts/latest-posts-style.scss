@@ -1,18 +1,20 @@
-$article-padding: 15px;
+$article: (
+	padding: 15px
+);
 
 .block-latest-posts {
 	&__posts {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		margin-left: -#{$article-padding};
-		margin-right: -#{$article-padding};
+		margin-left: -#{map-get-strict($article, padding)};
+		margin-right: -#{map-get-strict($article, padding)};
 	}
 
 	&__post {
 		@include flex-column-width(4);
-		padding: $article-padding;
-		height: 100%
+		padding: map-get-strict($article, padding);
+		height: 100%;
 	}
 
 	&__image {
