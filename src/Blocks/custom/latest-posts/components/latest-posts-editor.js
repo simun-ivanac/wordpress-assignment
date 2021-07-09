@@ -11,7 +11,6 @@ export const LatestPostsEditor = ({ attributes }) => {
 				{
 					...attributes,
 					wrapperUse: false,
-					serverSideRender: true,
 				}
 			}
 		/>
