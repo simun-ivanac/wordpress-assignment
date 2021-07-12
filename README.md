@@ -12,7 +12,7 @@ Create landing page provided in `design` folder. Every task should be done on se
 
 :heavy_check_mark: fetch some data from public API & display it on custom REST route
 
-:x: create custom block that will load fetched data
+:heavy_check_mark: create custom block that will load fetched data
 
 :x: style frontpage
 
