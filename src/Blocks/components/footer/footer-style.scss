@@ -15,6 +15,7 @@ $footer: (
 	height: map-get-strict($footer, height);
 	width: 100%;
 	position: relative;
+	margin: map-get-strict($footer, site-padding) 0;
 
 	&__wrap {
 		max-width: map-get-strict($footer, site-container);
@@ -32,17 +33,37 @@ $footer: (
 		display: flex;
 
 		&--left {
+			flex: 0 0 auto;
 			justify-content: flex-start;
 		}
 
 		&--center {
 			text-align: center;
-			justify-content: center;
+			justify-content: flex-start;
 		}
 
 		&--right {
 			text-align: right;
 			justify-content: flex-end;
 		}
+	}
+
+	&__logo {
+		padding: 0 25px;
+		
+		.logo {
+			width: auto;
+
+			&__img {
+				height: 100%;
+				max-height: map-get-strict($footer, height);
+			}
+		}
+	}
+
+	.copyright {
+		color: global-settings(colors, light);
+		font-weight: bold;
+		padding: 0 25px;
 	}
 }

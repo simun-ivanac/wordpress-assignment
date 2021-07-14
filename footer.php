@@ -7,6 +7,7 @@
  */
 
 use AssignmentVendor\EightshiftLibs\Helpers\Components;
+use Assignment\Manifest\Manifest;
 
 ?>
 
@@ -18,17 +19,27 @@ echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputN
 	[
 		'selectorClass' => 'footer',
 		'layoutLeft' => Components::render(
-			'copyright',
+			'logo',
 			[
-				'copyrightBy' => esc_html__('Eightshift', 'assignment'),
-				'copyrightYear' => gmdate('Y'),
-				'copyrightContent' => esc_html__('Made with 🧡  by Eightshift team', 'assignment'),
+				'parentClass' => 'footer',
+				'logoSrc' => \apply_filters(Manifest::MANIFEST_ITEM, 'eightshift-logo.svg'),
+				'logoAlt' => \get_bloginfo('name'),
+				'logoTitle' => \get_bloginfo('name'),
+				'logoHref' => \get_bloginfo('url'),
+			]
+		),
+		'layoutCenter' => Components::render(
+			'menu',
+			[
+				'variation' => 'horizontal',
+				'parentClass' => 'footer',
 			]
 		),
 		'layoutRight' => Components::render(
-			'menu',
+			'copyright',
 			[
-				'variation' => 'horizontal'
+				'copyrightYear' => gmdate('Y'),
+				'copyrightContent' => esc_html__('All love and hapiness', 'assignment'),
 			]
 		),
 	]
