@@ -2,10 +2,10 @@ $menu-horizontal: (
 	link-padding: 0 15px,
 	link-modifiers: (
 		normal: (
-			color: global-settings(colors, black),
+			color: global-settings(colors, light),
 		),
 		hover: (
-			color: global-settings(colors, primary),
+			color: global-settings(colors, pink),
 		)
 	),
 );
@@ -16,6 +16,7 @@ $menu-horizontal: (
 	height: 100%;
 	display: flex;
 	align-items: center;
+	font-weight: bold;
 
 	&__link {
 		text-decoration: none;
@@ -27,5 +28,13 @@ $menu-horizontal: (
 		transition: 0.3s color ease-in-out;
 
 		@include link($menu-horizontal, link-modifiers);
+	}
+
+	&__item {
+		&--active {
+			.menu-horizontal__link {
+				color: global-settings(colors, pink);
+			}
+		}
 	}
 }
