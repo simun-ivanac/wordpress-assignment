@@ -11,7 +11,15 @@ get_header();
 if (have_posts()) {
 	while (have_posts()) {
 		the_post();
-		the_title();
+		echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			'heading',
+			[
+				'headingContent' => the_title('', '', false),
+				'headingLevel' => 1,
+				'headingAlign' => 'center',
+				'headingSize' => 'superbig',
+			]
+		);
 		the_content();
 	}
 }
