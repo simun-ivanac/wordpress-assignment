@@ -4,4 +4,6 @@
  * Usage: `WordPress admin screen`, `WordPress frontend screen`, `WordPress admin editor`.
  */
 
-import './logo.svg';
+import './eightshift-logo.svg';
+import './arrow-left.svg';
+import './arrow-right.svg';
