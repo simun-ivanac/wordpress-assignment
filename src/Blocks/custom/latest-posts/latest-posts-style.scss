@@ -1,5 +1,20 @@
 $article: (
-	padding: 15px
+	padding: 15px,
+	site-padding: global-settings(gutters, default),
+	sizes: (
+		mobile: (
+			flex: 0 0 100%,
+			max-width: 100%
+		),
+		tablet: (
+			flex: 0 0 50%,
+			max-width: 50%
+		),
+		desktop: (
+			flex: 0 0 25%,
+			max-width: 25%
+		),
+	),
 );
 
 .block-latest-posts {
@@ -12,7 +27,7 @@ $article: (
 	}
 
 	&__post {
-		@include flex-column-width(4);
+		@include responsive($article, sizes);
 		padding: map-get-strict($article, padding);
 		height: 100%;
 	}
@@ -63,10 +78,6 @@ $article: (
 	}
 
 	&__btn-wrap {
-		margin-top: 30px;
-	}
-	
-	&__btn {
-		background-color: global-settings(colors, pink);
-	}
+		margin-top: map-get-strict($article, site-padding) * 2;
+	}	
 }
