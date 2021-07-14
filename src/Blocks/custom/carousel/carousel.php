@@ -22,6 +22,10 @@ $carouselClass = Components::classnames([
 	'swiper-container',
 ]);
 
+$navigationClass = Components::classnames([
+	"{$blockClass}__navigation",
+]);
+
 $arrowPrevClass = Components::classnames([
 	"{$blockClass}__arrow-prev",
 	"{$blockJsClass}-prev-arrow",
@@ -46,10 +50,13 @@ $paginationClass = Components::classnames([
 >
 
 	<div class="<?php echo esc_attr('swiper-wrapper'); ?>">
-		<?php echo wp_kses_post($innerBlockContent); ?>
+		<?php
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $innerBlockContent;
+		?>
 	</div>
 
-	<div class="<?php echo esc_attr($blockClass); ?>__navigation">
+	<div class="<?php echo esc_attr($navigationClass); ?>">
 		<span class="<?php echo esc_attr($arrowPrevClass); ?>">
 			<img 
 				src="<?php echo esc_url(apply_filters(Manifest::MANIFEST_ITEM, 'arrow-left.svg')); ?>"
