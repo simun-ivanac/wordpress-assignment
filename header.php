@@ -18,7 +18,7 @@ use Assignment\Manifest\Manifest;
 	echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		'head',
 		[
-			'icon' => \apply_filters(Manifest::MANIFEST_ITEM, 'logo.svg'),
+			'icon' => \apply_filters(Manifest::MANIFEST_ITEM, 'eightshift-logo.svg'),
 		]
 	);
 
@@ -37,7 +37,7 @@ echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputN
 			'logo',
 			[
 				'parentClass' => 'header',
-				'logoSrc' => \apply_filters(Manifest::MANIFEST_ITEM, 'logo.svg'),
+				'logoSrc' => \apply_filters(Manifest::MANIFEST_ITEM, 'eightshift-logo.svg'),
 				'logoAlt' => \get_bloginfo('name'),
 				'logoTitle' => \get_bloginfo('name'),
 				'logoHref' => \get_bloginfo('url'),

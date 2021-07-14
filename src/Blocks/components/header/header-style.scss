@@ -1,11 +1,22 @@
+@use '../button/button-style.scss';
+
 $header: (
 	height: $base-header-height,
 	site-padding: global-settings(gutters, default),
 	site-container: global-settings(containers, default),
 	colors: (
 		background: global-settings(colors, white),
+		box-shadow: global-settings(colors, light),
 	),
 	z-index: map-get-strict($zindex, header),
+	link-modifiers: (
+		normal: (
+			color: global-settings(colors, black),
+		),
+		hover: (
+			color: global-settings(colors, pink),
+		),
+	),
 );
 
 .header {
@@ -17,6 +28,7 @@ $header: (
 	width: 100%;
 	position: relative;
 	z-index: map-get-strict($header, z-index);
+	box-shadow: 0 1px 7px map-get-deep($header, colors, box-shadow);
 
 	&--fixed {
 		position: fixed;
@@ -43,20 +55,34 @@ $header: (
 
 		&--center {
 			text-align: center;
-			justify-content: center;
+			justify-content: flex-end;
 		}
 
 		&--right {
+			flex: 0 0 auto;
 			text-align: right;
 			justify-content: flex-end;
 		}
 	}
+
+	
 
 	&__logo {
 		height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		padding: 0 25px;
+
+		.logo {
+			width: auto;
+
+			&__img {
+				height: 100%;
+				max-height: map-get-strict($header, height);
+				padding: 5px;
+			}
+		}
 
 		@include media(desktop up) {
 			justify-content: flex-start;
@@ -66,6 +92,28 @@ $header: (
 	&__menu {
 		height: 100%;
 		display: none;
+		padding: 0 25px;
+		font-weight: bold;
+
+		.menu-horizontal {
+			&__link {
+				@include link($header, link-modifiers);
+			}
+
+			&__item {
+				&--active {
+					.menu-horizontal__link {
+						@include link($header, link-modifiers);
+					}
+				}
+
+				&:last-child {
+					.menu-horizontal__link {
+						@extend .btn;
+					}
+				}
+			}
+		}
 
 		@include media(desktop up) {
 			display: flex;
