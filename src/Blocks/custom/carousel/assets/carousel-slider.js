@@ -45,8 +45,6 @@ export class CarouselSlider {
 			},
 			breakpoints: {
 				[breakpoints.tablet]: {
-					// slidesPerView: showItems,
-					// spaceBetween: showItems === '2' ? 3 : 0,
 				},
 			},
 			on: {
