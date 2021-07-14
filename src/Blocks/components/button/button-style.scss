@@ -2,11 +2,11 @@ $btn: (
 	colors: (
 		primary: (
 			normal: (
-				background-color: global-settings(colors, primary),
+				background-color: global-settings(colors, pink),
 				color: global-settings(colors, white),
 			),
 			hover: (
-				background-color: global-settings(colors, black),
+				background-color: global-settings(colors, pink),
 			),
 		),
 		black: (
