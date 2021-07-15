@@ -1,5 +1,3 @@
-@use '../button/button-style.scss';
-
 $header: (
 	height: $base-header-height,
 	site-padding: global-settings(gutters, default),
@@ -9,14 +7,6 @@ $header: (
 		box-shadow: global-settings(colors, light),
 	),
 	z-index: map-get-strict($zindex, header),
-	link-modifiers: (
-		normal: (
-			color: global-settings(colors, black),
-		),
-		hover: (
-			color: global-settings(colors, pink),
-		),
-	),
 );
 
 .header {
@@ -65,8 +55,6 @@ $header: (
 		}
 	}
 
-	
-
 	&__logo {
 		height: 100%;
 		display: flex;
@@ -94,26 +82,6 @@ $header: (
 		display: none;
 		padding: 0 25px;
 		font-weight: bold;
-
-		.menu-horizontal {
-			&__link {
-				@include link($header, link-modifiers);
-			}
-
-			&__item {
-				&--active {
-					.menu-horizontal__link {
-						@include link($header, link-modifiers);
-					}
-				}
-
-				&:last-child {
-					.menu-horizontal__link {
-						@extend .btn;
-					}
-				}
-			}
-		}
 
 		@include media(desktop up) {
 			display: flex;
