@@ -16,7 +16,7 @@ if (have_posts()) {
 		echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			'heading',
 			[
-				'headingContent' => the_title('', '', false),
+				'headingContent' => get_the_title(),
 				'headingLevel' => 1,
 				'headingAlign' => 'center',
 				'headingSize' => 'superbig',
