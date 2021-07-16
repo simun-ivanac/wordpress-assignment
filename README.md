@@ -14,7 +14,7 @@ Create landing page provided in `design` folder. Every task should be done on se
 
 :heavy_check_mark: create custom block that will load fetched data
 
-:x: style frontpage
+:heavy_check_mark: style frontpage
 
 ### Sidenotes
 
