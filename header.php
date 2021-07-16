@@ -46,7 +46,7 @@ echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputN
 		'layoutCenter' => Components::render(
 			'menu',
 			[
-				'variation' => 'horizontal',
+				'variation' => 'horizontal-header',
 				'parentClass' => 'header',
 			]
 		),
